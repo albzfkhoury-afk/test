@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paola Maria Baliki | Interior Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#f8f3e7',
+                        teal: '#185255',
+                        coral: '#ed7f5a',
+                        sage: '#a1b19f'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Georgia', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        .project-img { transition: transform 0.4s ease, filter 0.4s ease; }
+        .project-img:hover { transform: scale(1.03); filter: brightness(1.05); }
+        .section-divider { height: 1px; background: linear-gradient(90deg, transparent, #a1b19f, transparent); }
+    </style>
+</head>
+<body class="bg-cream text-teal">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-cream/95 backdrop-blur-sm z-50 border-b border-sage/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#hero" class="text-lg font-medium tracking-wide">PMB</a>
+                <div class="hidden md:flex space-x-8 text-sm tracking-wide">
+                    <a href="#about" class="hover:text-coral transition-colors">About</a>
+                    <a href="#bars" class="hover:text-coral transition-colors">Bars & Eateries</a>
+                    <a href="#commercial" class="hover:text-coral transition-colors">Commercial</a>
+                    <a href="#residential" class="hover:text-coral transition-colors">Residential</a>
+                    <a href="#contact" class="hover:text-coral transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-sage/20">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#about" class="block hover:text-coral transition-colors">About</a>
+                <a href="#bars" class="block hover:text-coral transition-colors">Bars & Eateries</a>
+                <a href="#commercial" class="block hover:text-coral transition-colors">Commercial</a>
+                <a href="#residential" class="block hover:text-coral transition-colors">Residential</a>
+                <a href="#contact" class="block hover:text-coral transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/o2139U51SeI4zJu.png" 
+                 alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-10 text-center px-4 py-20">
+            <p class="text-coral text-sm md:text-base tracking-[0.2em] uppercase mb-4">interior architect | industrial designer</p>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-light tracking-[0.15em] uppercase mb-6">
+                Paola Maria Baliki
+            </h1>
+            <div class="text-sm md:text-base text-teal/80 space-y-1 mb-12">
+                <p>Scuola Politecnico di Design graduate // 2014 // Milan, Italy</p>
+                <p>Lebanese American University graduate // 2012 // Beirut, Lebanon</p>
+            </div>
+            <a href="#about" class="inline-flex items-center gap-2 border border-teal px-6 py-3 text-sm tracking-wide hover:bg-teal hover:text-cream transition-all">
+                Explore Work
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-coral text-sm tracking-[0.2em] uppercase mb-6 text-center">More About the Designer //</h2>
+            <div class="text-center space-y-6 text-base md:text-lg leading-relaxed text-teal/90">
+                <p>Paola is an experienced interior architect with a deep passion for creating both residential and commercial spaces. Holding a master's degree in industrial design, she brings a comprehensive understanding of both the aesthetic and functional dimensions of interior architecture. Her attentive approach and strong focus on detail help her deliver work that is both harmonious and visually compelling.</p>
+                <p>Paola's background in project management complements her design skills, allowing her to plan and execute projects efficiently while ensuring smooth coordination and timely delivery. She is committed to truly understanding her clients' needs and transforming their visions into designs that surpass expectations.</p>
+                <p>Believing in the power of collaboration, Paola works closely with architects and designers, drawing on their combined expertise to craft cohesive and innovative spaces. This collaborative process not only enriches her projects but also fosters creativity and drives continuous improvement in her work.</p>
+            </div>
+            <div class="flex justify-center gap-6 mt-10">
+                <a href="https://www.instagram.com/paolamariabaliki/" target="_blank" class="text-coral hover:text-teal transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/paola-maria-baliki-a045428b/" target="_blank" class="text-coral hover:text-teal transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- BARS & EATERIES -->
+    <section id="bars" class="py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl text-sage text-center mb-16 tracking-wide">bars and eateries</h2>
+
+            <!-- JIVE -->
+            <article class="mb-24">
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">JIVE / COCKTAIL BAR</h3>
+                <p class="text-center text-sm text-teal/70 mb-6">Type: Cocktail Bar / Location: Gemmayze Beirut, Lebanon / Area: ~60 sqm / Completed in 2022</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">Jive is an all-day bar and hangout located in the vibrant street of Gemmayzeh. It presents a re-interpretation of the street disco, drawing inspiration from the culture of the seventies. The collaboration with designer and co-owner, Jihane Fares, ensured that every detail of the design is in complete synchrony with the Jive identity. Throughout the space, a balance of light and color highlights different materials and settings, providing a unique experience both during the day and in the absence of daylight.</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/whatsapp-image-2023-04-07-at-115557-11-3bda9e.jpg" alt="Jive Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/whatsapp-image-2023-04-07-at-115556-1-a9c128.jpg" alt="Jive Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/whatsapp-image-2023-04-07-at-115557-6-5b2463.jpg" alt="Jive Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/whatsapp-image-2023-04-07-at-115557-12-ff14cc.jpg" alt="Jive Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/whatsapp-image-2023-04-07-at-115557-fc73bc.jpg" alt="Jive Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/whatsapp-image-2023-04-07-at-115557-1-54d206.jpg" alt="Jive Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                </div>
+            </article>
+
+            <!-- 16MM -->
+            <article class="mb-24">
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">16 MM / COCKTAIL BAR</h3>
+                <p class="text-center text-sm text-teal/70 mb-6">Type: Resto-Bar / Location: Gemmayze Beirut, Lebanon / Area: ~60 sqm / Completed in 2019</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">Step into a movie-inspired bar, where cinematic dreams come alive within its enchanting interior. The walls are adorned with vintage film posters, immortalizing beloved classics. Soft, dimmed lights evoke a nostalgic ambiance, reminiscent of a bygone era. Plush velvet curtains drape gracefully, adding an air of old Hollywood glamour.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/t2139xniT0IiDxh.jpg" alt="16MM Bar" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/o2139haQKAi0bUS.jpg" alt="16MM Bar" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/q21398VKPrJgnaI.jpg" alt="16MM Bar" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/v213905HlegjeT5.jpg" alt="16MM Bar" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                </div>
+            </article>
+
+            <!-- BYBLOS -->
+            <article class="mb-24">
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">BYBLOS / RESTAURANT</h3>
+                <p class="text-center text-sm text-teal/70 mb-6">Type: Eatery / Location: Byblos, Lebanon / Indoor: ~180 sqm, Outdoor: ~200 sqm / Completed in 2018</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">Nestled within the ancient walls of the historic city of Byblos lies this Lebanese fusion restaurant. The interior exudes a timeless charm, showcasing the rich cultural heritage of the region. Weathered stone walls, adorned with rustic tapestries and archways, transport patrons to another era. Soft light dances upon wooden tables, offering a warm and inviting atmosphere.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/r2139krzdf9xQDZ.jpg" alt="Byblos Restaurant" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/x2139L7AhhATdn3.jpg" alt="Byblos Restaurant" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/h2139lTqoOzjdMi.jpg" alt="Byblos Restaurant" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/w2139WLDMLUzEJ4.jpg" alt="Byblos Restaurant" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                </div>
+            </article>
+
+            <!-- STEAK HOUSE -->
+            <article class="mb-24">
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">STEAK HOUSE / RESTAURANT</h3>
+                <p class="text-center text-sm text-teal/70 mb-6">Type: Eatery / Location: Doha, Qatar / Indoor Area: 180 sqm / Completed in 2023</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">Enter a steakhouse restaurant where industrial elements and culinary mastery unite. The interior showcases a captivating fusion of raw materials, with corten steel accents and exposed brick walls lending an urban and rugged charm. The centerpiece is a visible kitchen, bustling with skilled chefs crafting sizzling cuts of meat to perfection.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/19-092a5e.jpg" alt="Steak House" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/20-b6b3e3.jpg" alt="Steak House" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/ss-p-general-view-f95b53.jpg" alt="Steak House" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/ss-p-tree-space-d87164.jpg" alt="Steak House" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                </div>
+            </article>
+
+            <!-- ROOFTOP BAR -->
+            <article class="mb-24">
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">ROOFTOP BAR</h3>
+                <p class="text-center text-sm text-teal/70 mb-6">Type: Nightclub / Location: Dbaye, Lebanon / Area: ~450 sqm / Completed in 2017</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">This rooftop nightclub is an extraordinary venue that combines bold colors, geometric forms, zigzag patterns, and lush greenery. Its rectangular layout with various levels ensures excellent visibility towards the central bar and DJ booth from all standing points. The interior exudes a vibrant and energetic atmosphere, with vivid hues of electric blue, pink, and fiery orange.</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/k2139u4ZuZexGgO.jpg" alt="Rooftop Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/p21397xZZpOe9Di.jpg" alt="Rooftop Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/x2139XmlBpLmEgL.jpg" alt="Rooftop Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/g2139WEry6iU3Ko.jpg" alt="Rooftop Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/p21391Wrzp0hXxm.jpg" alt="Rooftop Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/r2139HJydtyw7m3.jpg" alt="Rooftop Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                </div>
+            </article>
+
+            <!-- ORENDA -->
+            <article class="mb-24">
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">ORENDA COFFEE SHOP</h3>
+                <p class="text-center text-sm text-teal/70 mb-6">Type: Cafe Resto-Bar / Location: Mar Mkhayel Beirut, Lebanon / Indoor: ~60 sqm, Outdoor: ~50 sqm / Completed in 2018</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">A plant-based vegan restaurant that radiates a vibrant and whimsical atmosphere. Neon signs adorn the walls, casting a playful glow that dances with shades of pink. The interior is a sanctuary of eco-friendly materials, with recycled wood accents and lush greenery hanging from the ceiling, infusing the space with a sense of natural beauty.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/v21394D2EDzCZIp.jpg" alt="Orenda Coffee" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/x2139FeggzHQY8R.jpg" alt="Orenda Coffee" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/v2139vExVqA5cYK.jpg" alt="Orenda Coffee" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/r2139UvBFLnZLG7.jpg" alt="Orenda Coffee" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                </div>
+            </article>
+
+            <!-- SUNSET BEACH BAR -->
+            <article>
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">SUNSET BEACH BAR</h3>
+                <p class="text-center text-sm text-teal/70 mb-6">Type: Beach Bar / Location: Batroun, Lebanon / Area: ~50 sqm / Completed in 2019</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">Nestled along the Mediterranean sea, a boho beach bar invites visitors into a haven of relaxed elegance. Handmade lighting fixtures illuminate the space, casting a warm, ethereal glow on the eclectic decor. Driftwood and seashells adorn the walls, while macrame hangings sway gently in the ocean breeze. Colorful tapestries and vibrant textiles add a touch of bohemian flair.</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/q2139jF6eDMrhpr.jpg" alt="Sunset Beach Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/y2139Sap9fJYO9L.jpg" alt="Sunset Beach Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/g213908YDqHmHbk.jpg" alt="Sunset Beach Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/f2139KrgC9waVl6.jpg" alt="Sunset Beach Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/n2139sh63TAtydR.jpg" alt="Sunset Beach Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/b21398p61criaYB.jpg" alt="Sunset Beach Bar" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- COMMERCIAL -->
+    <section id="commercial" class="py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl text-sage text-center mb-16 tracking-wide">stores, offices and commercial spaces</h2>
+
+            <!-- PARIS 2024 - CLUBHOUSE -->
+            <article class="mb-24">
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">EVENT EXPERIENCES / PARIS 2024</h3>
+                <p class="text-center text-sm text-teal/70 mb-2">Type: Exhibition / Location: Palais de Tokyo, Paris France / Area: 15,000 sqm / Completed in 2024</p>
+                <p class="text-center text-xs text-coral mb-6">Part of the Paris 2024 Olympic and Paralympic Games</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">Clubhouse24, a first-of-its-kind venue, was part of the official Paris 2024 Olympics Hospitality Venues. The modern art museum was transformed into an immersive sports experience, covering 15,000 sqm of sports, arts, and entertainment where culture, creativity, and athleticism converged.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/3-medium-28072024-dsc-0962-wwwgauvinpictures-58ae52.jpg" alt="Paris 2024" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/clubhouse24-31-07-thomas-aiv09267-bf8b83.jpg" alt="Paris 2024" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/clubhouse24-2707-serge-potier-16-fcb6ae.jpg" alt="Paris 2024" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/clubhouse24-2907-serge-potier-2-23072d.jpg" alt="Paris 2024" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/clubhouse24-2707-serge-potier-14-32f62d.jpg" alt="Paris 2024" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/10-medium-28072024-dsc-1168-wwwgauvinpictures-e26654.jpg" alt="Paris 2024" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/20240728-112734-65d44f.jpg" alt="Paris 2024" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/1721842085076-09bac7.jpg" alt="Paris 2024" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                </div>
+            </article>
+
+            <!-- PARIS 2024 - SALON -->
+            <article class="mb-24">
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">SALON 24 / PARIS 2024</h3>
+                <p class="text-center text-sm text-teal/70 mb-2">Type: Exhibition / Location: Maison de l'Amerique latine, Paris France / Area: 3,000 sqm / Completed in 2024</p>
+                <p class="text-center text-xs text-coral mb-6">Part of the Paris 2024 Olympic and Paralympic Games</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">Thematically designed as a retrospective of the historic Parisian art salons, Salon 24 is a hospitality experience inspired by the visionary founder of the modern Olympics, Pierre de Coubertin. Following in Coubertin's footsteps through the Paris Olympic Games from 1900 through present day, Salon 24 celebrates the evolution of 124 years of sport, art, and culture.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/2-medium-30072024-dsc-2096-wwwgauvinpictures-9f24f2.jpg" alt="Salon 24" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/19-medium-30072024-dsc-2537-wwwgauvinpictures-ca3e4a.jpg" alt="Salon 24" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/salon24-01-08-thomas-aiv09846-31b0f2.jpg" alt="Salon 24" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/salon24-27-07-chang-martin-img-8402-60685a.jpg" alt="Salon 24" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                </div>
+            </article>
+
+            <!-- OLYMPISM MADE VISIBLE -->
+            <article class="mb-24">
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">OLYMPISM MADE VISIBLE / PARIS 2024</h3>
+                <p class="text-center text-sm text-teal/70 mb-2">Type: Photography Exhibition / Location: Maison de l'Amerique latine, Paris France / Area: 620 sqm / Completed in 2024</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">We had the pleasure of assisting in the layout and design of artist panels for an exhibition featuring over 115 photographs from the Olympism Made Visible initiative. Twelve artists depicted the practice of sport from diverse regions, emphasizing its role in empowering individuals and communities.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/20240728-131457-77868a.jpg" alt="Olympism Exhibition" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/20240728-131613-2cda32.jpg" alt="Olympism Exhibition" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/20240728-131823-cd2c68.jpg" alt="Olympism Exhibition" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/20240728-132043-af9622.jpg" alt="Olympism Exhibition" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                </div>
+            </article>
+
+            <!-- POP UP STORE -->
+            <article class="mb-24">
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">POP UP STORE</h3>
+                <p class="text-center text-sm text-teal/70 mb-6">Type: Retail Space / Area: ~80 sqm / Completed in 2019</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">The store features a concentric layout and a predominantly pastel pink color palette. Custom-made furniture and exhibition stands add uniqueness and enhance the overall aesthetic appeal. Soft and delicate hues of pink, such as blush, baby pink, and rose quartz, dominate the store's color palette, creating a calming and inviting atmosphere.</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/n2139XdBbbw5fxe.jpg" alt="Pop Up Store" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/q21390WhbZqUpBa.jpg" alt="Pop Up Store" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/q2139f1mk8PZ1Dr.jpg" alt="Pop Up Store" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/a2139JNan9I09TX.jpg" alt="Pop Up Store" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/f2139gWHDaQEaSs.jpg" alt="Pop Up Store" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/t2139XsrVndCzzI.jpg" alt="Pop Up Store" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                </div>
+            </article>
+
+            <!-- CORPORATE OFFICES 1 -->
+            <article class="mb-24">
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">CORPORATE OFFICES</h3>
+                <p class="text-center text-sm text-teal/70 mb-6">Type: Offices / Area: ~2,000 sqm / Completed in 2024</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">For the headquarters of this private holding company, a lavish art deco approach with a modern touch is applied. Moroccan green marble, glass, stone, geometric forms, and wood cladding come together to sculpt the space. The design's philosophy lies behind bringing forward a balanced game of contrasts: light and dark, pastel and vivid colors, bold and timid materials, transparency and privacy.</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/h2139dGWYlGt053.jpg" alt="Corporate Office" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/u2139n5ZqtpvkJ5.jpg" alt="Corporate Office" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/i21394HURxhHkFu.jpg" alt="Corporate Office" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/x2139fRhnV0uouB.jpg" alt="Corporate Office" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/x2139Em6LASp6XH.jpg" alt="Corporate Office" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/n2139RkMuRGJI15.jpg" alt="Corporate Office" class="project-img w-full h-48 md:h-64 object-cover rounded">
+                </div>
+            </article>
+
+            <!-- CORPORATE OFFICES 2 -->
+            <article>
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">CORPORATE OFFICES</h3>
+                <p class="text-center text-sm text-teal/70 mb-6">Type: Offices / Area: ~1,500 sqm / Completed in 2019</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">Polished bottocino marble flooring, herringbone patterns, modern furniture, delicate lighting are characteristics that shape these corporate offices. The reigning ambiance is classical modernized practicality. Recurring materials are used in the entrance, meeting room and waiting room, reflecting the company's identity with the "msharabiya" pattern extracted from the company's logo.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/y2139zIAncK3EnW.jpg" alt="Corporate Office" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/k2139WoySYgh44I.jpg" alt="Corporate Office" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/a2139XbAyt93aLt.jpg" alt="Corporate Office" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/b2139ZVEDonLIAj.jpg" alt="Corporate Office" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- RESIDENTIAL -->
+    <section id="residential" class="py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl text-sage text-center mb-16 tracking-wide">residential works</h2>
+
+            <!-- APARTMENT F -->
+            <article class="mb-24">
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">APARTMENT F</h3>
+                <p class="text-center text-sm text-teal/70 mb-6">Type: Apartment / Location: Beirut, Lebanon / Area: 350 sqm / Completed in 2022</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/t21346Eg0TTJue2d.png" alt="Apartment F" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/p21346Hh34LiFXWm.png" alt="Apartment F" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/m21346yqrpow7LDX.png" alt="Apartment F" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/d21346X3FU07BRPy.png" alt="Apartment F" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/c21346FGK8pjMDlf.png" alt="Apartment F" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/c21346BuCchySR4f.png" alt="Apartment F" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/g21346PvTWo1dIar.png" alt="Apartment F" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/i213465Cc9j1muFy.png" alt="Apartment F" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                </div>
+            </article>
+
+            <!-- APARTMENT B -->
+            <article class="mb-24">
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">APARTMENT B</h3>
+                <p class="text-center text-sm text-teal/70 mb-6">Type: Mountain House / Location: Wata al Jawz, Lebanon / Area: 750 sqm / Completed in 2018</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">This villa offers a remarkable design where three separate apartments seamlessly blend into one, creating a cohesive and inviting living space. With its rectangular garden, kitchen garden, and garden house, it provides ample outdoor areas for relaxation and connection with nature. The brick red roof, natural stone facades, and touches of Lebanese architectural style add character.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/whatsapp-image-2023-08-23-at-123751-888344.jpg" alt="Apartment B" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/whatsapp-image-2023-08-23-at-130917-2-f2979d.jpg" alt="Apartment B" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/whatsapp-image-2023-08-23-at-123751-1-a7c262.jpg" alt="Apartment B" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/whatsapp-image-2023-08-23-at-130917-1-803c68.jpg" alt="Apartment B" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/whatsapp-image-2023-08-23-at-123753-bc4c69.jpg" alt="Apartment B" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/whatsapp-image-2023-08-23-at-130917-be5a90.jpg" alt="Apartment B" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/whatsapp-image-2023-08-23-at-142114-d3b100.jpg" alt="Apartment B" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                    <img src="https://dvqlxo2m2q99q.cloudfront.net/000_clients/3165030/page/whatsapp-image-2023-08-24-at-204439-38853a.jpg" alt="Apartment B" class="project-img w-full h-48 md:h-56 object-cover rounded">
+                </div>
+            </article>
+
+            <!-- APARTMENT R -->
+            <article>
+                <h3 class="text-2xl md:text-3xl text-coral text-center mb-4">APARTMENT R</h3>
+                <p class="text-center text-sm text-teal/70 mb-6">Type: AirBnB / Location: Maine, Berkshire / Area: 450 sqm / Completed in 2021</p>
+                <p class="max-w-3xl mx-auto text-center text-teal/80 mb-8 leading-relaxed">In Berkshire, Maine, a charming wooden cabin provides a cozy retreat with a design inspired by water activities. The interior is inviting, blending wood's rustic charm with vibrant colors. The palette reflects nearby lakes and rivers, with shades of blue creating a fresh ambiance. Joyful pops of yellow, coral, and green adorn upholstery, pillows, and artwork.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <img src="https://dkemhji6i1k0x.cloudfront.net/000_clients/3165030/page/u22270b2sVzPHo.jpg" alt="Apartment R" class="project-img w-full h-48 md:h-56 object-cover rounded col-span-2">
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer id="contact" class="bg-teal text-cream py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl mb-6">Let's Create Together</h2>
+            <p class="text-cream/80 mb-8 max-w-xl mx-auto">Interested in collaborating on your next interior design project? I'd love to hear from you.</p>
+            
+            <div class="flex justify-center gap-8 mb-10">
+                <a href="https://www.instagram.com/paolamariabaliki/" target="_blank" class="text-cream/80 hover:text-coral transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/paola-maria-baliki-a045428b/" target="_blank" class="text-cream/80 hover:text-coral transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+
+            <div class="border-t border-cream/20 pt-8">
+                <p class="text-sm text-cream/60">© 2024 Paola Maria Baliki. All rights reserved.</p>
+                <p class="text-xs text-cream/40 mt-2">Interior Architect | Industrial Designer | Beirut & Beyond</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
