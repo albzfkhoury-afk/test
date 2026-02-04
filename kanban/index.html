@@ -152,6 +152,48 @@
         }
         .legend-dot.albert { background: #3b82f6; }
         .legend-dot.rony { background: #10b981; }
+        .usage-widget {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px;
+            padding: 8px 10px;
+            min-width: 190px;
+        }
+        .usage-toggle {
+            background: none;
+            border: none;
+            color: #fff;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding: 0;
+        }
+        .usage-caret { transition: transform 0.2s; opacity: 0.7; }
+        .usage-body {
+            margin-top: 6px;
+            display: grid;
+            gap: 4px;
+            font-size: 0.75rem;
+        }
+        .usage-row {
+            display: flex;
+            justify-content: space-between;
+            color: rgba(255,255,255,0.7);
+        }
+        .usage-row span:last-child { color: #fff; font-weight: 600; }
+        .usage-row.total {
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding-top: 4px;
+            margin-top: 4px;
+        }
+        .usage-widget.collapsed .usage-body { display: none; }
+        .usage-widget.collapsed .usage-caret { transform: rotate(-90deg); }
     </style>
 </head>
 <body>
@@ -159,6 +201,18 @@
         <h1>📋 Kanban Board</h1>
         <div class="header-actions">
             <span class="sync-status syncing" id="sync-status">Syncing...</span>
+            <div class="usage-widget" id="usage-widget">
+                <button class="usage-toggle" id="usage-toggle" type="button">
+                    <span>API Usage</span>
+                    <span class="usage-caret" id="usage-caret">▾</span>
+                </button>
+                <div class="usage-body" id="usage-body">
+                    <div class="usage-row"><span>Claude (today)</span><span id="usage-claude-today">--</span></div>
+                    <div class="usage-row"><span>Codex (today)</span><span id="usage-codex-today">--</span></div>
+                    <div class="usage-row total"><span>Total today</span><span id="usage-total-today">--</span></div>
+                    <div class="usage-row"><span>This week</span><span id="usage-total-week">--</span></div>
+                </div>
+            </div>
             <button class="secondary" onclick="loadTasks()">🔄 Refresh</button>
         </div>
     </header>
@@ -205,8 +259,10 @@
 
     <script>
         const BIN_ID = '69827a57d0ea881f409e8bc6';
+        const USAGE_BIN_ID = '69832063ae596e708f104a7a';
         const API_KEY = '$2a$10$jiu.OJNS24heHS2Hilv5x.3zeQTzLRp5Z83U0RBsUq5lLBpjEs1li';
         const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
+        const USAGE_API_URL = `https://api.jsonbin.io/v3/b/${USAGE_BIN_ID}`;
 
         let tasks = { backlog: [], inprogress: [], review: [], done: [] };
         let draggedCard = null;
@@ -247,6 +303,46 @@
                 setStatus('synced', '✓ Synced');
             } catch (e) {
                 setStatus('error', '✗ Error');
+                console.error(e);
+            }
+        }
+
+        function formatMoney(value) {
+            const num = Number(value || 0);
+            return `$${num.toFixed(2)}`;
+        }
+
+        function setUsageValues(summary) {
+            const today = summary?.today || { claude: 0, codex: 0 };
+            const week = summary?.week || { claude: 0, codex: 0 };
+            const totalToday = Number(today.claude || 0) + Number(today.codex || 0);
+            const totalWeek = Number(week.claude || 0) + Number(week.codex || 0);
+            document.getElementById('usage-claude-today').textContent = formatMoney(today.claude);
+            document.getElementById('usage-codex-today').textContent = formatMoney(today.codex);
+            document.getElementById('usage-total-today').textContent = formatMoney(totalToday);
+            document.getElementById('usage-total-week').textContent = formatMoney(totalWeek);
+        }
+
+        function setUsageError(label) {
+            document.getElementById('usage-claude-today').textContent = label;
+            document.getElementById('usage-codex-today').textContent = label;
+            document.getElementById('usage-total-today').textContent = label;
+            document.getElementById('usage-total-week').textContent = label;
+        }
+
+        async function loadUsage() {
+            if (!USAGE_BIN_ID || USAGE_BIN_ID === 'REPLACE_WITH_NEW_BIN_ID') {
+                setUsageError('Set bin');
+                return;
+            }
+            try {
+                const res = await fetch(USAGE_API_URL + '/latest', {
+                    headers: { 'X-Master-Key': API_KEY }
+                });
+                const data = await res.json();
+                setUsageValues(data.record?.summary);
+            } catch (e) {
+                setUsageError('Error');
                 console.error(e);
             }
         }
@@ -343,7 +439,12 @@
             });
         });
 
+        document.getElementById('usage-toggle').addEventListener('click', () => {
+            document.getElementById('usage-widget').classList.toggle('collapsed');
+        });
+
         loadTasks();
+        loadUsage();
     </script>
 </body>
 </html>
