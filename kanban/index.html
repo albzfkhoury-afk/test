@@ -83,11 +83,23 @@
             cursor: grab;
             transition: transform 0.2s, box-shadow 0.2s;
             position: relative;
+            border-left: 3px solid transparent;
         }
+        .card.owner-albert { border-left-color: #3b82f6; }
+        .card.owner-rony { border-left-color: #10b981; }
         .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
         .card.dragging { opacity: 0.5; }
         .card-title { font-weight: 500; margin-bottom: 6px; padding-right: 24px; }
-        .card-desc { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+        .card-desc { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+        .card-owner {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+        .card-owner.albert { background: #3b82f6; }
+        .card-owner.rony { background: #10b981; }
         .card-delete {
             position: absolute;
             top: 8px;
@@ -122,6 +134,24 @@
         .add-form input::placeholder { color: rgba(255,255,255,0.4); }
         .add-form input[type="text"]:first-of-type { flex: 1; min-width: 200px; }
         .add-form input[type="text"]:nth-of-type(2) { flex: 2; min-width: 250px; }
+        .legend {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+        .legend-dot.albert { background: #3b82f6; }
+        .legend-dot.rony { background: #10b981; }
     </style>
 </head>
 <body>
@@ -133,9 +163,18 @@
         </div>
     </header>
 
+    <div class="legend">
+        <div class="legend-item"><div class="legend-dot albert"></div> Albert (owner reminds)</div>
+        <div class="legend-item"><div class="legend-dot rony"></div> Rony (AI actions)</div>
+    </div>
+
     <div class="add-form">
         <input type="text" id="new-title" placeholder="Task title..." />
         <input type="text" id="new-desc" placeholder="Description (optional)" />
+        <select id="new-owner">
+            <option value="albert">👤 Albert</option>
+            <option value="rony">🤖 Rony</option>
+        </select>
         <select id="new-column">
             <option value="backlog">Backlog</option>
             <option value="inprogress">In Progress</option>
@@ -219,14 +258,16 @@
                 container.innerHTML = '';
                 count.textContent = tasks[col].length;
                 tasks[col].forEach(task => {
+                    const owner = task.owner || 'albert';
                     const card = document.createElement('div');
-                    card.className = 'card';
+                    card.className = `card owner-${owner}`;
                     card.draggable = true;
                     card.dataset.id = task.id;
                     card.innerHTML = `
                         <button class="card-delete" onclick="deleteTask('${task.id}', '${col}')">&times;</button>
                         <div class="card-title">${escapeHtml(task.title)}</div>
                         ${task.description ? `<div class="card-desc">${escapeHtml(task.description)}</div>` : ''}
+                        <span class="card-owner ${owner}">${owner === 'albert' ? '👤 Albert' : '🤖 Rony'}</span>
                     `;
                     card.addEventListener('dragstart', handleDragStart);
                     card.addEventListener('dragend', handleDragEnd);
@@ -244,12 +285,14 @@
         function addTask() {
             const title = document.getElementById('new-title').value.trim();
             const desc = document.getElementById('new-desc').value.trim();
+            const owner = document.getElementById('new-owner').value;
             const col = document.getElementById('new-column').value;
             if (!title) return;
             tasks[col].push({
                 id: Date.now().toString(),
                 title: title,
-                description: desc
+                description: desc,
+                owner: owner
             });
             document.getElementById('new-title').value = '';
             document.getElementById('new-desc').value = '';
@@ -300,7 +343,6 @@
             });
         });
 
-        // Load on start
         loadTasks();
     </script>
 </body>
