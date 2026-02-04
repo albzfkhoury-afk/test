@@ -259,7 +259,7 @@
 
     <script>
         const BIN_ID = '69827a57d0ea881f409e8bc6';
-        const USAGE_BIN_ID = '69832063ae596e708f104a7a';
+        const USAGE_BIN_ID = '69832095ae596e708f104ae6';
         const API_KEY = '$2a$10$jiu.OJNS24heHS2Hilv5x.3zeQTzLRp5Z83U0RBsUq5lLBpjEs1li';
         const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
         const USAGE_API_URL = `https://api.jsonbin.io/v3/b/${USAGE_BIN_ID}`;
@@ -445,6 +445,12 @@
 
         loadTasks();
         loadUsage();
+
+        // Auto-refresh every 5 minutes
+        setInterval(() => {
+            loadTasks();
+            loadUsage();
+        }, 5 * 60 * 1000);
     </script>
 </body>
 </html>
